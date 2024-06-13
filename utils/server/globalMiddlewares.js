@@ -4,6 +4,7 @@ import helmet from "helmet";
 import xss from 'xss-clean'
 import sanitize from 'express-mongo-sanitize'
 import upload from "../multer/configMulter.js";
+import { requestLogger } from "../helpers/logger/index.js";
 
 const globalMiddleware = (app) => {
 
@@ -13,6 +14,7 @@ const globalMiddleware = (app) => {
     app.use(sanitize());
     app.use(xss());
     app.use(helmet());
+    app.use(requestLogger);
 
     // multer configure
     app.use(
