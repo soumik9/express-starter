@@ -28,5 +28,9 @@
     "xss-clean": "^0.1.4",
     "zod": "^3.23.8"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "eslint": "9.x",
+    "globals": "^15.4.0"
+  }
 }
