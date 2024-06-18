@@ -11,6 +11,10 @@ globalMiddlewares(app);
 // all routes
 app.use('/api/v1', routes);
 
+app.get('/', (req, res) => {
+    res.send("Helloe")
+})
+
 // files route
 app.use('/public', express.static('public'))
 

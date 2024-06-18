@@ -1,6 +1,5 @@
 {
     "env": {
-        "browser": true,
         "es2021": true,
         "node": true
     },
@@ -9,6 +8,6 @@
         "ecmaVersion": 12
     },
     "rules": {
-        // "no-unused-vars": "warn"
+        "no-unused-vars": "warn"
     }
 }
