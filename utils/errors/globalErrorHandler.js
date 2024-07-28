@@ -7,7 +7,7 @@ import handleZodError from './handleZodError.js';
 import { MulterError } from 'multer';
 import httpStatus from 'http-status';
 
-const globalErrorHandler = (error, req, res, next) => {
+const globalErrorHandler = (error, req, res) => {
 
     let statusCode = 500;
     let message = 'Something went wrong !';

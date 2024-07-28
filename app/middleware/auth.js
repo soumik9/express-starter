@@ -1,7 +1,7 @@
 import ApiError from "../../utils/errors/ApiError.js";
 import httpStatus from "http-status";
-import { verifyToken } from "../../utils/helpers/jwt/index.js";
-import { config } from "../../utils/server/index.js";
+import config from "../../utils/server/config.js";
+import verifyToken from "../../utils/helpers/jwt/verifyToken.js";
 
 export default (...requiredRoles) => async (req, res, next) => {
     try {

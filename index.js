@@ -1,7 +1,9 @@
 import express from 'express'
 import routes from './app/routers/routes.js';
 import globalErrorHandler from './utils/errors/globalErrorHandler.js';
-import { bootstrap, globalMiddlewares, handleRouteNotFound } from './utils/server/index.js';
+import bootstrap from './utils/server/bootstrap.js';
+import handleRouteNotFound from './utils/server/handleRouteNotFound.js';
+import globalMiddlewares from './utils/server/globalMiddlewares.js';
 
 const app = express();
 
@@ -12,7 +14,7 @@ globalMiddlewares(app);
 app.use('/api/v1', routes);
 
 app.get('/', (req, res) => {
-    res.send("Helloe")
+    res.send("Hellow")
 })
 
 // files route

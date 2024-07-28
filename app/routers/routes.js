@@ -1,5 +1,6 @@
 import express from 'express';
-import { AuthRouter, OrganizerRouter } from './index.js';
+import { AuthRouter } from './AuthRouter.js';
+import { OrganizerRouter } from './OrganizerRouter.js';
 
 const router = express.Router();
 

@@ -1,6 +1,6 @@
-import { getRequestUrl } from "../global/index.js";
 import moment from "moment";
 import { httpLogger } from "./logConfig.js";
+import getRequestUrl from "../global/getRequestUrl.js";
 
 const requestLogger = (req, res, next) => {
     const { method } = req;

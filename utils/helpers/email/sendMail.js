@@ -1,8 +1,8 @@
 import httpStatus from "http-status";
 import ApiError from "../../errors/ApiError.js";
-import { transporter } from "../../server/index.js";
-import { config } from "../../server/index.js";
 import { errorLogger, infoLogger } from "../logger/logConfig.js";
+import config from "../../server/config.js";
+import transporter from "../../server/transporter.js";
 
 const sendMail = async ({ email, subject, content }) => {
     try {

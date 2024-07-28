@@ -1,9 +1,10 @@
 import httpStatus from "http-status";
 import ApiError from "../../utils/errors/ApiError.js";
-import { Organizer } from "../models/index.js";
-import { catchAsync, sendResponse } from "../../utils/helpers/global/index.js";
-import { compareString } from "../../utils/helpers/bcrypt/index.js";
-import { generateToken } from "../../utils/helpers/jwt/index.js";
+import generateToken from "../../utils/helpers/jwt/generateToken.js";
+import compareString from "../../utils/helpers/bcrypt/compareString.js";
+import catchAsync from "../../utils/helpers/global/catchAsync.js";
+import sendResponse from "../../utils/helpers/global/sendResponse.js";
+import Organizer from "../models/OrganizerSchema.js";
 
 // sass signin controller
 const Signin = catchAsync(async (req, res) => {
@@ -33,18 +34,15 @@ const Signin = catchAsync(async (req, res) => {
     // generating token
     const token = generateToken(findOrgnizer);
 
-    // user data to send with response
-    const { password, ...pwd } = findOrgnizer;
-
     sendResponse(res, {
         statusCode: httpStatus.OK,
         success: true,
         message: 'Login Success!',
         data: {
             accessToken: token,
-            _id: pwd._id,
-            name: pwd.name,
-            surname: pwd.surname,
+            _id: findOrgnizer._id,
+            name: findOrgnizer.name,
+            surname: findOrgnizer.surname,
         },
     });
 }

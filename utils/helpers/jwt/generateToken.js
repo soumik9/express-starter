@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-import { config } from '../../server/index.js';
+import config from '../../server/config.js';
 
 export default (data) => {
 
